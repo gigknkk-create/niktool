@@ -5,7 +5,13 @@
     "path": "/tools/word-counter/",
     "category": "Text",
     "icon": "text",
-    "keywords": ["word", "character", "sentence", "reading time", "text"]
+    "keywords": [
+      "word",
+      "character",
+      "sentence",
+      "reading time",
+      "text"
+    ]
   },
   {
     "name": "JSON Formatter",
@@ -13,7 +19,13 @@
     "path": "/tools/json-formatter/",
     "category": "Developer",
     "icon": "code",
-    "keywords": ["json", "format", "validate", "minify", "developer"]
+    "keywords": [
+      "json",
+      "format",
+      "validate",
+      "minify",
+      "developer"
+    ]
   },
   {
     "name": "Password Generator",
@@ -21,7 +33,25 @@
     "path": "/tools/password-generator/",
     "category": "Security",
     "icon": "shield",
-    "keywords": ["password", "random", "secure", "generator", "security"]
+    "keywords": [
+      "password",
+      "random",
+      "secure",
+      "generator",
+      "security"
+    ]
+  },
+  {
+    "name": "Case Converter",
+    "description": "User ke text ko uppercase, lowercase, title case aur sentence case mein convert karna.",
+    "path": "/tools/case-converter/",
+    "category": "Text",
+    "icon": "fa-toolbox",
+    "keywords": [
+      "case-converter",
+      "text",
+      "free tool",
+      "online"
+    ]
   }
 ]
-
