@@ -54,5 +54,12 @@
       "online",
       "niktool"
     ]
+  },
+  {
+    "id": "image-background-remover",
+    "name": "AI Image Background Remover",
+    "description": "High-quality browser-based background removal using AI.",
+    "path": "tools/image-background-remover/index.html",
+    "category": "Image Tools"
   }
 ]
