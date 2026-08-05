@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Converter - Free Online Tool | NikTool</title>
+    <meta name="description" content="User ke text ko uppercase, lowercase, title case aur sentence case mein convert karna. Fast, secure, browser-based free online Case Converter on NikTool.">
+    <link rel="canonical" href="https://niktool.in/tools/case-converter/">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Case Converter - Free Online Tool | NikTool">
+    <meta property="og:description" content="User ke text ko uppercase, lowercase, title case aur sentence case mein convert karna.">
+    <meta property="og:url" content="https://niktool.in/tools/case-converter/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NikTool">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Case Converter - Free Online Tool">
+    <meta name="twitter:description" content="User ke text ko uppercase, lowercase, title case aur sentence case mein convert karna.">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Case Converter",
+      "operatingSystem": "All",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "User ke text ko uppercase, lowercase, title case aur sentence case mein convert karna."
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col">
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur px-4 py-3">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <a href="../../" class="text-lg font-bold text-indigo-400 flex items-center gap-2">
+                <span>⚡ NikTool</span>
+            </a>
+            <span class="text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-2.5 py-1 rounded-full font-medium">
+                Text
+            </span>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-4xl w-full mx-auto p-4 sm:p-6 space-y-6">
+        <div class="text-center space-y-2">
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Case Converter</h1>
+            <p class="text-sm text-slate-400 max-w-xl mx-auto">User ke text ko uppercase, lowercase, title case aur sentence case mein convert karna.</p>
+        </div>
+
+        <!-- Interactive Core Tool Workspace -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-2xl space-y-4">
+            <div>
+                <label for="tool-input-field" class="block text-xs font-semibold text-slate-300 mb-1">Enter / Paste Input</label>
+                <textarea id="tool-input-field" rows="5" placeholder="Type or paste your data here..."
+                    class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm text-slate-100 font-mono focus:outline-none focus:border-indigo-500 transition resize-y"></textarea>
+            </div>
+
+            <!-- Action Toolbar Buttons -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-slate-800">
+                <div class="flex flex-wrap items-center gap-2" id="action-buttons-group">
+                    <button id="btn-action-primary" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold px-4 py-2 rounded-xl transition">
+                        Process Data
+                    </button>
+                    <button id="btn-action-clear" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3 py-2 rounded-xl transition">
+                        Clear
+                    </button>
+                </div>
+                
+                <div class="flex items-center gap-4 text-xs text-slate-400 font-mono">
+                    <span>Chars: <strong id="stat-chars" class="text-indigo-400">0</strong></span>
+                    <span>Words: <strong id="stat-words" class="text-indigo-400">0</strong></span>
+                </div>
+            </div>
+
+            <!-- Output Result Area -->
+            <div>
+                <div class="flex items-center justify-between mb-1">
+                    <label for="tool-output-field" class="block text-xs font-semibold text-slate-300">Output Result</label>
+                    <button id="btn-action-copy" class="text-xs text-indigo-400 hover:text-indigo-300 transition font-medium">
+                        Copy Result
+                    </button>
+                </div>
+                <textarea id="tool-output-field" rows="5" readonly placeholder="Output will appear here..."
+                    class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm text-slate-100 font-mono focus:outline-none transition resize-y"></textarea>
+            </div>
+
+            <!-- Notification / Status Banner -->
+            <div id="status-message-box" class="hidden text-xs px-3 py-2 rounded-lg font-mono"></div>
+        </div>
+
+        <!-- SEO Explanation Content -->
+        <article class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 text-slate-300 text-sm space-y-4">
+            <h2 class="text-lg font-bold text-white">About Case Converter</h2>
+            <p>User ke text ko uppercase, lowercase, title case aur sentence case mein convert karna. Designed for maximum speed, security, and convenience, this tool operates entirely inside your web browser without sending any data to external servers.</p>
+            
+            <h3 class="text-md font-semibold text-white mt-4">Key Features</h3>
+            <ul class="list-disc list-inside space-y-1 text-slate-400">
+                <li>Live conversion</li>
+                <li>Copy result button</li>
+                <li>Clear button</li>
+                <li>Character aur word count</li>
+                <li>Empty input handling</li>
+            </ul>
+
+            <h3 class="text-md font-semibold text-white mt-4">Privacy & Security Guarantee</h3>
+            <p class="text-xs text-slate-400">Your privacy is fully preserved. All text processing and calculations occur 100% locally on your device in real-time.</p>
+        </article>
+    </main>
+
+    <footer class="border-t border-slate-800 py-4 text-center text-xs text-slate-500 font-mono">
+        &copy; NikTool - Privacy First Online Developer & Text Tools
+    </footer>
+
+    <script src="tool.js"></script>
+</body>
+</html>
