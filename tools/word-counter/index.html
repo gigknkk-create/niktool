@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free Word Counter — Words, Characters & Reading Time | NikTool</title>
+  <meta name="description" content="Count words, characters, sentences, paragraphs, and estimated reading time instantly. A free private word counter that runs in your browser.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://niktool.in/tools/word-counter/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Word Counter | NikTool">
+  <meta property="og:description" content="Instantly count words, characters, sentences, paragraphs, and reading time.">
+  <meta property="og:url" content="https://niktool.in/tools/word-counter/">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#176b4d">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Word Counter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://niktool.in/tools/word-counter/","description":"Count words, characters, sentences, paragraphs, and reading time instantly.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="NikTool home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7h14M8 12h8m-5 5h2"/></svg></span><span class="brand-text">NikTool</span></a>
+      <div class="nav-links"><a class="home-link" href="/">Home</a><a href="/#tools">All tools</a></div>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <div class="breadcrumbs"><a href="/">Home</a><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg><span>Word Counter</span></div>
+    <section class="tool-hero">
+      <span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 10h10M4 14h16M4 18h8"/></svg></span>
+      <h1>Word Counter</h1>
+      <p>See the length and reading time of any text instantly. Everything stays in your browser.</p>
+    </section>
+
+    <section class="tool-workspace" aria-labelledby="workspace-title">
+      <div class="workspace-header"><h2 id="workspace-title">Your text</h2><span class="workspace-status"><span class="status-dot"></span>Processed locally</span></div>
+      <label class="sr-only" for="text-input">Enter or paste text to count</label>
+      <textarea class="tool-textarea" id="text-input" placeholder="Start typing or paste your text here…" autofocus></textarea>
+      <div class="stats-grid" aria-live="polite">
+        <div class="stat"><strong class="stat-value" id="words">0</strong><span class="stat-label">Words</span></div>
+        <div class="stat"><strong class="stat-value" id="characters">0</strong><span class="stat-label">Characters</span></div>
+        <div class="stat"><strong class="stat-value" id="sentences">0</strong><span class="stat-label">Sentences</span></div>
+        <div class="stat"><strong class="stat-value" id="reading-time">0 min</strong><span class="stat-label">Reading time</span></div>
+      </div>
+      <div class="toolbar">
+        <button class="button secondary" id="clear-button" type="button">Clear text</button>
+        <span class="message" id="detail-count">0 paragraphs · 0 characters without spaces</span>
+      </div>
+    </section>
+
+    <article class="seo-content">
+      <h2>How to use the word counter</h2>
+      <p>Type directly into the box or paste text from another document. The counts update automatically, so there is no submit button and no waiting. Use Clear text when you want to start again.</p>
+      <h2>What does this tool count?</h2>
+      <p>The tool reports words, all characters, sentences, paragraphs, and characters excluding whitespace. Reading time is estimated at an average pace of 225 words per minute.</p>
+      <h2>Is my writing private?</h2>
+      <p>Yes. Counting happens locally with JavaScript in your browser. The text you enter is not uploaded or stored by this tool.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner container"><p>© <span data-year></span> NikTool.</p><div class="footer-links"><a href="/">Home</a><a href="/#tools">All tools</a></div></div></footer>
+  <script src="/assets/shared.js"></script>
+  <script src="/tools/word-counter/tool.js"></script>
+</body>
+</html>

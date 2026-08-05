@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Strong Password Generator — Free & Private | NikTool</title>
+  <meta name="description" content="Generate strong random passwords with custom length, numbers, symbols, and letter options. Free, private, and powered by browser cryptography.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://niktool.in/tools/password-generator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Strong Password Generator | NikTool">
+  <meta property="og:description" content="Create secure custom passwords privately with browser cryptography.">
+  <meta property="og:url" content="https://niktool.in/tools/password-generator/">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#176b4d">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Strong Password Generator","applicationCategory":"SecurityApplication","operatingSystem":"Any","url":"https://niktool.in/tools/password-generator/","description":"Generate customizable random passwords locally using browser cryptography.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="/" aria-label="NikTool home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7h14M8 12h8m-5 5h2"/></svg></span><span class="brand-text">NikTool</span></a><div class="nav-links"><a class="home-link" href="/">Home</a><a href="/#tools">All tools</a></div></nav></header>
+
+  <main id="main" class="container">
+    <div class="breadcrumbs"><a href="/">Home</a><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg><span>Password Generator</span></div>
+    <section class="tool-hero">
+      <span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.6 2.9 8 7 10 4.1-2 7-5.4 7-10V6l-7-3Z"/><path d="m9.5 12 1.6 1.6 3.6-3.8"/></svg></span>
+      <h1>Password Generator</h1>
+      <p>Create a strong, unique password using secure randomness built into your browser.</p>
+    </section>
+
+    <section class="tool-workspace" aria-labelledby="workspace-title">
+      <div class="workspace-header"><h2 id="workspace-title">Generate a password</h2><span class="workspace-status"><span class="status-dot"></span>Generated locally</span></div>
+      <div class="password-output">
+        <label class="sr-only" for="password-output">Generated password</label>
+        <input id="password-output" type="text" readonly autocomplete="off" spellcheck="false">
+        <button class="copy-icon-button" id="copy-button" type="button" aria-label="Copy password"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>
+      </div>
+      <div class="control-grid">
+        <div class="control-group">
+          <label class="control-label" for="length"><span>Password length</span><output class="range-value" id="length-value" for="length">20</output></label>
+          <input id="length" type="range" min="8" max="64" value="20">
+        </div>
+        <fieldset class="control-group" style="margin:0"><legend class="control-label">Characters</legend>
+          <div class="check-list">
+            <label class="check-option"><input type="checkbox" data-chars="lower" checked>Lowercase</label>
+            <label class="check-option"><input type="checkbox" data-chars="upper" checked>Uppercase</label>
+            <label class="check-option"><input type="checkbox" data-chars="numbers" checked>Numbers</label>
+            <label class="check-option"><input type="checkbox" data-chars="symbols" checked>Symbols</label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="strength-row"><div class="strength-track" aria-hidden="true"><div class="strength-fill" id="strength-fill"></div></div><span class="strength-label" id="strength-label">Strong</span></div>
+      <div class="toolbar"><button class="button" id="generate-button" type="button">Generate new password</button><p class="message" id="password-message" role="status"></p></div>
+    </section>
+
+    <article class="seo-content">
+      <h2>How to generate a strong password</h2>
+      <p>Choose a length and the character types you want, then select Generate new password. Longer passwords with a mix of lowercase letters, uppercase letters, numbers, and symbols are generally harder to guess.</p>
+      <h2>Why use a random password generator?</h2>
+      <p>People tend to create predictable passwords. A cryptographically random generator avoids common words and personal patterns, producing a unique password that is more resistant to guessing attacks.</p>
+      <h2>Is this password generator safe?</h2>
+      <p>Passwords are generated locally with the Web Crypto API and are never sent to our servers. Store each password in a trusted password manager, and never reuse passwords across accounts.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner container"><p>© <span data-year></span> NikTool.</p><div class="footer-links"><a href="/">Home</a><a href="/#tools">All tools</a></div></div></footer>
+  <script src="/assets/shared.js"></script>
+  <script src="/tools/password-generator/tool.js"></script>
+</body>
+</html>

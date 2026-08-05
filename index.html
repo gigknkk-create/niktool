@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NikTool — Simple, fast online tools</title>
+  <meta name="description" content="Free, fast, privacy-friendly online tools for text, development, security, and everyday work. No signup required.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://niktool.in/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NikTool — Simple, fast online tools">
+  <meta property="og:description" content="Useful browser-based tools with no signup and no unnecessary uploads.">
+  <meta property="og:url" content="https://niktool.in/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#176b4d">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"NikTool","url":"https://niktool.in/","description":"Free, fast and privacy-friendly online tools.","potentialAction":{"@type":"SearchAction","target":"https://niktool.in/?q={search_term_string}","query-input":"required name=search_term_string"}}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="NikTool home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7h14M8 12h8m-5 5h2"/></svg></span>
+        <span class="brand-text">NikTool</span>
+      </a>
+      <div class="nav-links">
+        <a class="home-link" href="#tools">All tools</a>
+        <a href="#privacy">Privacy</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero container">
+      <p class="eyebrow">Useful tools, thoughtfully made</p>
+      <h1>Get small tasks done <span>beautifully fast.</span></h1>
+      <p class="hero-copy">A growing collection of focused, privacy-friendly tools that work right in your browser. No accounts, no clutter.</p>
+      <div class="search-shell">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <label class="sr-only" for="tool-search">Search all tools</label>
+        <input class="search-input" id="tool-search" type="search" placeholder="Search tools, e.g. JSON or password…" autocomplete="off">
+        <span class="search-hint" aria-hidden="true">/</span>
+      </div>
+      <div class="trust-line" aria-label="Tool benefits">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>No signup</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Works locally</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Free to use</span>
+      </div>
+    </section>
+
+    <section class="catalog-section container" id="tools" aria-labelledby="tools-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="tools-title">Explore the toolbox</h2>
+          <p>Pick a tool and get straight to work.</p>
+        </div>
+        <span class="tool-count" id="tool-count" aria-live="polite">Loading…</span>
+      </div>
+      <div class="filters" id="category-filters" aria-label="Filter tools by category"></div>
+      <div class="tool-grid" id="tool-grid" aria-live="polite">
+        <div class="empty-state">Loading tools…</div>
+      </div>
+      <noscript><div class="noscript">JavaScript is required for live search. You can still open <a href="/tools/word-counter/">Word Counter</a>, <a href="/tools/json-formatter/">JSON Formatter</a>, or <a href="/tools/password-generator/">Password Generator</a>.</div></noscript>
+    </section>
+
+    <aside class="privacy-strip container" id="privacy">
+      <div>
+        <h2>Your data stays yours.</h2>
+        <p>These tools run locally in your browser whenever possible. Your text, JSON, and passwords are not sent to a server.</p>
+      </div>
+      <div class="privacy-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <p>© <span data-year></span> NikTool. Built for useful little moments.</p>
+      <div class="footer-links"><a href="/">Home</a><a href="#tools">Tools</a></div>
+    </div>
+  </footer>
+  <script src="/assets/shared.js"></script>
+  <script src="/assets/catalog.js"></script>
+</body>
+</html>
