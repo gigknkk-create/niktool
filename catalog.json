@@ -5,7 +5,13 @@
     "path": "/tools/word-counter/",
     "category": "Text",
     "icon": "text",
-    "keywords": ["word", "character", "sentence", "reading time", "text"]
+    "keywords": [
+      "word",
+      "character",
+      "sentence",
+      "reading time",
+      "text"
+    ]
   },
   {
     "name": "JSON Formatter",
@@ -13,7 +19,13 @@
     "path": "/tools/json-formatter/",
     "category": "Developer",
     "icon": "code",
-    "keywords": ["json", "format", "validate", "minify", "developer"]
+    "keywords": [
+      "json",
+      "format",
+      "validate",
+      "minify",
+      "developer"
+    ]
   },
   {
     "name": "Password Generator",
@@ -21,7 +33,19 @@
     "path": "/tools/password-generator/",
     "category": "Security",
     "icon": "shield",
-    "keywords": ["password", "random", "secure", "generator", "security"]
+    "keywords": [
+      "password",
+      "random",
+      "secure",
+      "generator",
+      "security"
+    ]
+  },
+  {
+    "id": "regex-tester",
+    "name": "Regex Tester",
+    "description": "Test and debug regular expressions in real-time with flag support.",
+    "path": "tools/regex-tester/index.html",
+    "category": "Developer Tools"
   }
 ]
-

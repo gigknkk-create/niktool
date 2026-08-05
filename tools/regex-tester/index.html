@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Tester</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .match-highlight {
+            background-color: rgba(59, 130, 246, 0.4);
+            border-bottom: 2px solid #3b82f6;
+            border-radius: 2px;
+        }
+        .match-highlight:nth-of-type(even) {
+            background-color: rgba(139, 92, 246, 0.4);
+            border-bottom-color: #8b5cf6;
+        }
+        #highlighter-layer {
+            color: transparent;
+            caret-color: white;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        #test-input {
+            background: transparent !important;
+            color: white !important;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-5xl">
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl font-bold mb-2 flex items-center justify-center gap-3">
+                <i class="fas fa-search text-blue-500"></i>
+                Regex Tester
+            </h1>
+            <p class="text-slate-400">Validate and debug your regular expressions in real-time</p>
+        </header>
+
+        <div class="grid grid-cols-1 gap-6">
+            <!-- Regex Input Card -->
+            <div class="bg-slate-800/50 backdrop-blur-md border border-slate-700/50 rounded-2xl p-6 shadow-xl">
+                <div class="flex flex-col md:flex-row gap-4 items-start">
+                    <div class="flex-1 w-full">
+                        <label class="block text-sm font-medium text-slate-400 mb-2 uppercase tracking-wider">Expression</label>
+                        <div class="relative flex items-center bg-slate-900 rounded-xl border border-slate-700 focus-within:border-blue-500 transition-all">
+                            <span class="pl-4 text-slate-500 text-xl">/</span>
+                            <input type="text" id="regex-pattern" 
+                                class="w-full bg-transparent border-none focus:ring-0 py-3 px-2 text-blue-400 font-mono text-lg"
+                                placeholder="[a-zA-Z0-9]+"
+                                value="([a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})">
+                            <span class="pr-4 text-slate-500 text-xl">/</span>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-auto">
+                        <label class="block text-sm font-medium text-slate-400 mb-2 uppercase tracking-wider">Flags</label>
+                        <div class="flex flex-wrap gap-2" id="flags-container">
+                            <button data-flag="g" class="flag-btn active bg-blue-600 px-3 py-2 rounded-lg font-mono hover:bg-blue-500 transition-colors" title="Global">g</button>
+                            <button data-flag="i" class="flag-btn active bg-blue-600 px-3 py-2 rounded-lg font-mono hover:bg-blue-500 transition-colors" title="Case-insensitive">i</button>
+                            <button data-flag="m" class="flag-btn bg-slate-700 px-3 py-2 rounded-lg font-mono hover:bg-slate-600 transition-colors" title="Multiline">m</button>
+                            <button data-flag="s" class="flag-btn bg-slate-700 px-3 py-2 rounded-lg font-mono hover:bg-slate-600 transition-colors" title="DotAll">s</button>
+                            <button data-flag="u" class="flag-btn bg-slate-700 px-3 py-2 rounded-lg font-mono hover:bg-slate-600 transition-colors" title="Unicode">u</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="regex-error" class="mt-3 text-red-400 text-sm hidden flex items-center gap-2">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span id="error-message"></span>
+                </div>
+            </div>
+
+            <!-- Editor Area -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Test String -->
+                <div class="lg:col-span-2 bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 shadow-xl relative">
+                    <label class="block text-sm font-medium text-slate-400 mb-2 uppercase tracking-wider flex justify-between">
+                        <span>Test String</span>
+                        <span id="match-count" class="text-blue-400 font-bold uppercase">0 Matches</span>
+                    </label>
+                    <div class="relative w-full h-80">
+                        <div id="highlighter-layer" class="absolute inset-0 p-4 font-mono text-base break-words overflow-y-auto custom-scrollbar pointer-events-none"></div>
+                        <textarea id="test-input" 
+                            class="absolute inset-0 w-full h-full p-4 font-mono text-base bg-transparent border border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none resize-none custom-scrollbar"
+                            spellcheck="false">Contact us at support@example.com or admin.dev@sub.domain.org. You can also reach hello-world@website.co.uk.</textarea>
+                    </div>
+                </div>
+
+                <!-- Match Details -->
+                <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 shadow-xl overflow-hidden flex flex-col">
+                    <label class="block text-sm font-medium text-slate-400 mb-2 uppercase tracking-wider">
+                        Match Details
+                    </label>
+                    <div id="match-details" class="flex-1 overflow-y-auto space-y-3 pr-2 custom-scrollbar">
+                        <div class="text-slate-500 italic text-sm text-center py-10">Matches will appear here...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./tool.js"></script>
+</body>
+</html>
