@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON to YAML Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <style>
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(71, 85, 105, 0.5);
+            border-radius: 4px;
+        }
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
+
+    <div class="flex-grow container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <div class="mb-8 text-center">
+            <h1 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 mb-2">
+                JSON to YAML Converter
+            </h1>
+            <p class="text-slate-400">Transform your structured data formats instantly.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-6">
+            <!-- Input Section -->
+            <div class="flex flex-col space-y-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-semibold uppercase tracking-wider text-slate-400">
+                        <i class="fa-solid fa-code mr-2"></i>JSON Input
+                    </span>
+                    <div class="flex gap-2">
+                        <button id="sampleBtn" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 rounded transition-colors">
+                            Sample JSON
+                        </button>
+                        <button id="clearBtn" class="text-xs bg-slate-800 hover:bg-red-900/30 text-slate-300 px-3 py-1 rounded transition-colors">
+                            Clear
+                        </button>
+                    </div>
+                </div>
+                <div class="glass-panel rounded-xl overflow-hidden shadow-2xl">
+                    <textarea 
+                        id="jsonInput"
+                        class="w-full h-[500px] p-4 bg-transparent border-none text-emerald-300 font-mono text-sm focus:ring-0 custom-scrollbar"
+                        placeholder="Paste your JSON here..."
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- Output Section -->
+            <div class="flex flex-col space-y-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-semibold uppercase tracking-wider text-slate-400">
+                        <i class="fa-solid fa-file-lines mr-2"></i>YAML Output
+                    </span>
+                    <button id="copyBtn" class="text-xs bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1 rounded transition-colors">
+                        <i class="fa-solid fa-copy mr-1"></i> Copy YAML
+                    </button>
+                </div>
+                <div class="glass-panel rounded-xl overflow-hidden shadow-2xl relative">
+                    <div id="errorMessage" class="hidden absolute inset-0 bg-red-900/20 backdrop-blur-sm flex items-center justify-center p-6 text-center">
+                        <div class="bg-slate-900 p-4 border border-red-500/50 rounded-lg shadow-xl">
+                            <i class="fa-solid fa-triangle-exclamation text-red-500 mb-2 text-xl"></i>
+                            <p id="errorText" class="text-red-400 text-sm font-mono"></p>
+                        </div>
+                    </div>
+                    <textarea 
+                        id="yamlOutput"
+                        readonly
+                        class="w-full h-[500px] p-4 bg-transparent border-none text-blue-300 font-mono text-sm focus:ring-0 custom-scrollbar"
+                        placeholder="YAML output will appear here..."
+                    ></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Footer -->
+        <div class="mt-8 glass-panel p-6 rounded-2xl flex flex-wrap gap-6 items-center justify-center">
+            <div class="flex items-center gap-3">
+                <label class="text-sm text-slate-400 font-medium">Indent Size:</label>
+                <select id="indentSelect" class="bg-slate-800 border-slate-700 rounded-md text-sm px-3 py-1 focus:ring-emerald-500 border-2">
+                    <option value="2">2 Spaces</option>
+                    <option value="4">4 Spaces</option>
+                    <option value="8">8 Spaces</option>
+                </select>
+            </div>
+            <div class="flex items-center gap-3">
+                <label class="text-sm text-slate-400 font-medium">Quotes:</label>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="quoteToggle" class="sr-only peer">
+                    <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600"></div>
+                    <span class="ml-2 text-sm text-slate-400">Force Double Quotes</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4 text-center text-slate-500 text-xs border-t border-slate-800/50">
+        Powered by js-yaml library &copy; 2023 JSON-YAML Utility
+    </footer>
+
+    <script src="./tool.js"></script>
+</body>
+</html>
