@@ -54,5 +54,19 @@
       "online",
       "niktool"
     ]
+  },
+  {
+    "name": "Base64 Encoder Decoder",
+    "description": "Text aur URLs ko Base64 format mein encode ya decode karna.",
+    "path": "/tools/base64-encoder-decoder/",
+    "category": "Developer",
+    "icon": "fa-code",
+    "keywords": [
+      "base64-encoder-decoder",
+      "developer",
+      "free tool",
+      "online",
+      "niktool"
+    ]
   }
 ]
