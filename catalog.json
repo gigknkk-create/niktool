@@ -54,5 +54,19 @@
       "online",
       "niktool"
     ]
+  },
+  {
+    "name": "pdf merger",
+    "description": "pdf merger karna",
+    "path": "/tools/pdf-merger/",
+    "category": "Developer",
+    "icon": "fa-code",
+    "keywords": [
+      "pdf-merger",
+      "developer",
+      "free tool",
+      "online",
+      "niktool"
+    ]
   }
 ]
