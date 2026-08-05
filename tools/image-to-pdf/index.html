@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to PDF Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .drop-zone {
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .drop-zone:hover, .drop-zone.dragover {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-4 md:p-8">
+    <div class="max-w-4xl mx-auto">
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl font-bold mb-2 flex items-center justify-center gap-3">
+                <i class="fas fa-file-pdf text-red-500"></i>
+                Image to PDF
+            </h1>
+            <p class="text-slate-400">Convert your images into a single PDF document securely in your browser.</p>
+        </header>
+
+        <div class="glass-card p-6 rounded-2xl shadow-xl">
+            <div id="dropZone" class="drop-zone rounded-xl p-10 text-center cursor-pointer mb-6">
+                <input type="file" id="fileInput" multiple accept="image/*" class="hidden">
+                <i class="fas fa-cloud-upload-alt text-5xl text-blue-500 mb-4"></i>
+                <p class="text-xl font-semibold mb-2">Click or Drag Images Here</p>
+                <p class="text-sm text-slate-400">Supports JPG, PNG, WebP</p>
+            </div>
+
+            <div id="optionsPanel" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 hidden">
+                <div>
+                    <label class="block text-sm font-medium mb-1 text-slate-300">Page Orientation</label>
+                    <select id="orientation" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 outline-none">
+                        <option value="p">Portrait</option>
+                        <option value="l">Landscape</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1 text-slate-300">Page Format</label>
+                    <select id="format" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 outline-none">
+                        <option value="a4">A4</option>
+                        <option value="letter">Letter</option>
+                        <option value="legal">Legal</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="previewContainer" class="hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-semibold">Selected Images (<span id="imageCount">0</span>)</h3>
+                    <button id="clearAll" class="text-red-400 hover:text-red-300 text-sm">
+                        <i class="fas fa-trash-alt mr-1"></i> Clear All
+                    </button>
+                </div>
+                <div id="imageGrid" class="preview-grid mb-6"></div>
+                
+                <button id="generateBtn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-900/20">
+                    <i class="fas fa-magic mr-2"></i> Generate PDF
+                </button>
+            </div>
+        </div>
+
+        <footer class="mt-8 text-center text-slate-500 text-sm">
+            No images are uploaded to any server. Everything happens locally in your browser.
+        </footer>
+    </div>
+    <script src="./tool.js"></script>
+</body>
+</html>
