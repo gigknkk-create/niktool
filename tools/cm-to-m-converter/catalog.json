@@ -1,4 +1,4 @@
-[
+
   {
     "name": "Centimeters to Meters Converter",
     "description": "Convert cm to m and m to cm with high precision. Fast, bidirectional, and free unit conversion tool.",
@@ -12,7 +12,6 @@
       "meters to centimeters",
       "length converter",
       "unit conversion"
-    ],
-    "order": 10
+    ]
+    
   }
-]
