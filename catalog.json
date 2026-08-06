@@ -116,6 +116,21 @@
     ]
   },
   {
+    "name": "Centimeters to Meters Converter",
+    "description": "Convert cm to m and m to cm with high precision. Fast, bidirectional, and free unit conversion tool.",
+    "path": "/tools/cm-to-m-converter/",
+    "category": "Units",
+    "icon": "straighten",
+    "keywords": [
+      "centimeters to meters",
+      "cm to m",
+      "m to cm",
+      "meters to centimeters",
+      "length converter",
+      "unit conversion"
+    ]
+  },
+  {
     "name": "Image to PNG Converter",
     "description": "Convert various image formats like JPG, WebP, and BMP to high-quality PNG instantly.",
     "path": "/tools/image-to-png-converter/",
