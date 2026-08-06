@@ -1,0 +1,166 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Custom PDF Page Remover Online | NikTool</title>
+  <meta name="description" content="Delete specific pages, ranges, or dynamic sets (e.g., 2,3,4 or 2-5 or last 3) from any PDF document locally in your browser. Fast, free, and private.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://niktool.in/tools/remove-pages-from-pdf/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Custom PDF Page Remover Online | NikTool">
+  <meta property="og:description" content="Delete flexible page selections like specific page numbers, page ranges, or first/last N pages directly in your browser.">
+  <meta property="og:url" content="https://niktool.in/tools/remove-pages-from-pdf/">
+  <meta name="twitter:card" content="summary">
+
+  <meta name="theme-color" content="#176b4d">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Custom PDF Page Remover",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "url": "https://niktool.in/tools/remove-pages-from-pdf/",
+    "description": "Remove custom pages, page ranges, or dynamic start/end page selections from PDF files securely in your browser.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="NikTool home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M5 7h14M8 12h8m-5 5h2"/>
+          </svg>
+        </span>
+        <span class="brand-text">NikTool</span>
+      </a>
+      <div class="nav-links">
+        <a class="home-link" href="/">Home</a>
+        <a href="/#tools">All tools</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <div class="breadcrumbs">
+      <a href="/">Home</a>
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m9 18 6-6-6-6"/>
+      </svg>
+      <span>Custom PDF Page Remover</span>
+    </div>
+
+    <section class="tool-hero">
+      <span class="tool-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="9" y1="15" x2="15" y2="15"></line>
+        </svg>
+      </span>
+      <h1>Custom PDF Page Remover</h1>
+      <p>Remove specific pages, custom ranges, or leading/trailing pages from your PDF file.</p>
+    </section>
+
+    <section class="tool-workspace" aria-labelledby="workspace-title">
+      <div class="workspace-header">
+        <h2 id="workspace-title">PDF Workspace</h2>
+        <span class="workspace-status">
+          <span class="status-dot"></span>
+          Processed locally
+        </span>
+      </div>
+
+      <div class="control-grid" style="margin-bottom: 1rem;">
+        <div class="control-group">
+          <label class="control-label" for="pdf-file-input">1. Select PDF Document</label>
+          <input type="file" id="pdf-file-input" accept=".pdf,application/pdf" style="padding: 0.5rem; width: 100%;">
+        </div>
+
+        <div class="control-group" style="margin-top: 1rem;">
+          <label class="control-label" for="pages-input">2. Pages to Remove</label>
+          <input type="text" class="tool-textarea" id="pages-input" placeholder="e.g. 2, 4, 6-8, first 2, last 3" style="padding: 0.6rem; width: 100%; font-family: monospace;">
+          <small style="display: block; margin-top: 0.4rem; color: #666;">
+            Formats allowed: <code>2, 4, 6</code> (individual), <code>2-5</code> (range), <code>first 2</code>, or <code>last 3</code>.
+          </small>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <button class="button" id="primary-action" type="button" disabled>Remove Selected Pages</button>
+        <button class="button secondary" id="clear-action" type="button" disabled>Clear</button>
+        <a class="button" id="download-action" style="display: none; text-decoration: none;" download="modified.pdf">Download PDF</a>
+      </div>
+
+      <p class="message" id="tool-message" role="status" aria-live="polite">
+        Select a PDF file and specify the pages to remove.
+      </p>
+    </section>
+
+    <article class="seo-content">
+      <h2>How to remove custom pages from a PDF</h2>
+      <ol>
+        <li>Upload your PDF file using the selector above.</li>
+        <li>Enter the pages or range to delete into the text field (for example, <code>2, 4-6, last 2</code>).</li>
+        <li>Click <strong>Remove Selected Pages</strong> and download your processed file.</li>
+      </ol>
+
+      <h2>Supported removal formats</h2>
+      <p>This flexible tool accepts several input patterns combined with commas:</p>
+      <ul>
+        <li><strong>Individual pages:</strong> <code>2, 4, 7</code></li>
+        <li><strong>Page ranges:</strong> <code>3-6</code> or <code>10-15</code></li>
+        <li><strong>First N pages:</strong> <code>first 2</code> or <code>first 5</code></li>
+        <li><strong>Last N pages:</strong> <code>last 3</code> or <code>last 1</code></li>
+      </ul>
+
+      <h2>Private browser-based processing</h2>
+      <p>Your documents stay strictly on your device. All parsing and page manipulation run in client-side WebAssembly and JavaScript using <code>pdf-lib</code>.</p>
+
+      <h2>Frequently asked questions</h2>
+      <details>
+        <summary>Can I combine ranges and individual page numbers?</summary>
+        <p>Yes! You can enter combinations like <code>1, 3-5, 8, last 2</code> in the page selection field.</p>
+      </details>
+      <details>
+        <summary>Can I delete all pages in a document?</summary>
+        <p>No, a PDF document must retain at least 1 remaining page to produce a valid file.</p>
+      </details>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <p>&copy; <span data-year></span> NikTool.</p>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/#tools">All tools</a>
+      </div>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript">This tool requires JavaScript to work.</p>
+  </noscript>
+
+  <script src="/assets/shared.js"></script>
+  <script src="/tools/remove-pages-from-pdf/tool.js"></script>
+</body>
+</html>

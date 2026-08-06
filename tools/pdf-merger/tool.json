@@ -1,0 +1,40 @@
+{
+  "title": "PDF Merger",
+  "description": "Merge multiple PDF files into one document securely in your browser.",
+  "seo": {
+    "title": "Merge PDF Files Online for Free | NikTool",
+    "description": "Combine multiple PDF files into one document online for free. Reorder your files and merge them privately without uploading them to a server.",
+    "canonical": "https://niktool.in/tools/pdf-merger/",
+    "keywords": [
+      "pdf merger",
+      "merge pdf online",
+      "combine pdf files",
+      "join pdf files",
+      "free pdf tool"
+    ],
+    "openGraph": {
+      "title": "Free PDF Merger Online | NikTool",
+      "description": "Reorder and combine PDF files privately in your browser.",
+      "type": "website",
+      "url": "https://niktool.in/tools/pdf-merger/"
+    }
+  },
+  "faqs": [
+    {
+      "question": "How do I merge PDF files?",
+      "answer": "Choose two or more PDF files, arrange them in the order you want, and select Merge PDFs. The combined document will download when it is ready."
+    },
+    {
+      "question": "Are my PDF files uploaded?",
+      "answer": "No. Your files are processed locally in your browser and are not uploaded to NikTool."
+    },
+    {
+      "question": "Can I change the order of the PDFs?",
+      "answer": "Yes. Use the Move up and Move down buttons beside each file before merging."
+    },
+    {
+      "question": "Can I merge password-protected PDFs?",
+      "answer": "Password-protected or encrypted PDFs must be unlocked before they can be merged with this tool."
+    }
+  ]
+}
