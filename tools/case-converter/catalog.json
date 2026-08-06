@@ -1,0 +1,9 @@
+{
+  "name": "Case Converter",
+  "description": "Convert text to uppercase, lowercase, title case, camelCase, and more.",
+  "path": "/tools/case-converter/",
+  "category": "Text",
+  "icon": "text",
+  "keywords": ["case", "uppercase", "lowercase", "title case", "camelcase", "snake case", "kebab case", "text"],
+  "order": 50
+}

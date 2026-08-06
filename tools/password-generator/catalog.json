@@ -1,0 +1,9 @@
+{
+  "name": "Password Generator",
+  "description": "Create strong, customizable passwords locally in your browser.",
+  "path": "/tools/password-generator/",
+  "category": "Security",
+  "icon": "shield",
+  "keywords": ["password", "random", "secure", "generator", "security"],
+  "order": 30
+}

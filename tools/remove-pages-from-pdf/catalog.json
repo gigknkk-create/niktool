@@ -1,0 +1,9 @@
+{
+  "name": "Custom PDF Page Remover",
+  "description": "Delete specific pages, custom ranges, or leading/trailing pages from any PDF document locally.",
+  "path": "/tools/remove-pages-from-pdf/",
+  "category": "PDF",
+  "icon": "text",
+  "keywords": ["pdf", "remove pages", "delete custom pdf pages", "delete page range", "remove page range", "delete pages"],
+  "order": 80
+}

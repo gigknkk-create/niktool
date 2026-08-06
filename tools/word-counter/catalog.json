@@ -1,0 +1,9 @@
+{
+  "name": "Word Counter",
+  "description": "Count words, characters, sentences, and reading time as you type.",
+  "path": "/tools/word-counter/",
+  "category": "Text",
+  "icon": "text",
+  "keywords": ["word", "character", "sentence", "reading time", "text"],
+  "order": 10
+}

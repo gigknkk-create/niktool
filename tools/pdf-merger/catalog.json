@@ -1,0 +1,9 @@
+{
+  "name": "PDF Merger",
+  "description": "Merge multiple PDF files into one document securely in your browser.",
+  "path": "/tools/pdf-merger/",
+  "category": "PDF",
+  "icon": "text",
+  "keywords": ["pdf", "merge", "combine", "join", "document"],
+  "order": 40
+}

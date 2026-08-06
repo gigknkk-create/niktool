@@ -1,0 +1,9 @@
+{
+  "name": "JSON Formatter",
+  "description": "Format, validate, minify, and copy JSON without uploading your data.",
+  "path": "/tools/json-formatter/",
+  "category": "Developer",
+  "icon": "code",
+  "keywords": ["json", "format", "validate", "minify", "developer"],
+  "order": 20
+}

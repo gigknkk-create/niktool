@@ -1,0 +1,9 @@
+{
+  "name": "Remove Last Two PDF Pages",
+  "description": "Delete the trailing 2 pages from any PDF document locally in your browser.",
+  "path": "/tools/remove-last-two-pdf-pages/",
+  "category": "PDF",
+  "icon": "text",
+  "keywords": ["pdf", "remove pages", "delete pdf pages", "trim pdf", "last two pages"],
+  "order": 60
+}

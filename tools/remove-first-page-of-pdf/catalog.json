@@ -1,0 +1,9 @@
+{
+  "name": "Remove First Page of PDF",
+  "description": "Delete the title or cover page from any PDF document locally in your browser.",
+  "path": "/tools/remove-first-page-of-pdf/",
+  "category": "PDF",
+  "icon": "text",
+  "keywords": ["pdf", "remove first page", "delete cover page", "trim pdf", "delete page 1"],
+  "order": 70
+}
