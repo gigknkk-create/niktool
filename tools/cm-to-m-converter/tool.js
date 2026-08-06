@@ -1,77 +1,78 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const cmInput = document.getElementById('cmInput');
-    const mInput = document.getElementById('mInput');
-    const clearBtn = document.getElementById('clearBtn');
-    const swapBtn = document.getElementById('swapBtn');
+    const cmInput = document.getElementById('cm-input');
+    const mInput = document.getElementById('m-input');
+    const resetBtn = document.getElementById('reset-btn');
 
     /**
-     * Utility to handle precision and prevent long decimal tails
-     * @param {number} value 
-     * @returns {number}
+     * Formats a number to a reasonable string representation
+     * Avoids long floating point trails but doesn't force decimals if they aren't needed.
      */
-    const formatResult = (value) => {
-        if (isNaN(value)) return '';
-        // Using toPrecision or rounding to 10 decimal places to handle float precision
-        const result = Number(Math.round(value + 'e10') + 'e-10');
-        return result;
+    const formatNumber = (num) => {
+        if (isNaN(num) || num === null) return '';
+        // Using a precision that handles most common conversion cases
+        const fixed = parseFloat(num.toFixed(8));
+        return fixed.toString();
     };
 
     /**
-     * Logic for Centimeters to Meters
+     * Logic for CM to M conversion
      */
-    const convertCmToM = () => {
-        const val = parseFloat(cmInput.value);
-        if (!isNaN(val)) {
-            mInput.value = formatResult(val / 100);
+    const convertCmToM = (value) => {
+        if (value === '') {
+            mInput.value = '';
+            return;
+        }
+        const cm = parseFloat(value);
+        if (!isNaN(cm)) {
+            const meters = cm / 100;
+            mInput.value = formatNumber(meters);
         } else {
             mInput.value = '';
         }
     };
 
     /**
-     * Logic for Meters to Centimeters
+     * Logic for M to CM conversion
      */
-    const convertMToCm = () => {
-        const val = parseFloat(mInput.value);
-        if (!isNaN(val)) {
-            cmInput.value = formatResult(val * 100);
+    const convertMToCm = (value) => {
+        if (value === '') {
+            cmInput.value = '';
+            return;
+        }
+        const m = parseFloat(value);
+        if (!isNaN(m)) {
+            const cm = m * 100;
+            cmInput.value = formatNumber(cm);
         } else {
             cmInput.value = '';
         }
     };
 
-    // Input Event Listeners
-    cmInput.addEventListener('input', convertCmToM);
-    mInput.addEventListener('input', convertMToCm);
+    // Event Listeners for live updates
+    cmInput.addEventListener('input', (e) => {
+        convertCmToM(e.target.value);
+    });
 
-    // Clear Functionality
-    clearBtn.addEventListener('click', () => {
+    mInput.addEventListener('input', (e) => {
+        convertMToCm(e.target.value);
+    });
+
+    // Clear button logic
+    resetBtn.addEventListener('click', () => {
         cmInput.value = '';
         mInput.value = '';
         cmInput.focus();
     });
 
-    // Swap Focus Functionality
-    swapBtn.addEventListener('click', () => {
-        if (document.activeElement === cmInput) {
-            mInput.focus();
-        } else {
-            cmInput.focus();
-        }
-    });
-
-    // Handle negative values - length usually isn't negative
-    // but we allow it as this is a mathematical converter.
-    // However, prevent 'e' and other chars if browser doesn't block them.
+    // Handle negative values or edge cases visually
     [cmInput, mInput].forEach(input => {
         input.addEventListener('keydown', (e) => {
-            if (['e', 'E', '+'].includes(e.key)) {
-                // Optional: prevent exponent notation for simpler UX
-                // e.preventDefault();
-            }
+            // Prevent scientific notation characters if desired, 
+            // but 'e' is technically valid in type="number".
+            // For simple length converters, we allow standard behavior.
         });
     });
 
-    // Initialization
-    console.log('NikTool: Length Converter Initialized');
+    // Initial state setup
+    console.log('Centimeter to Meter Converter Initialized');
 });
