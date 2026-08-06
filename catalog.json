@@ -114,5 +114,21 @@
       "remove page range",
       "delete pages"
     ]
+  },
+  {
+    "name": "Image to PNG Converter",
+    "description": "Convert various image formats like JPG, WebP, and BMP to high-quality PNG instantly.",
+    "path": "/tools/image-to-png-converter/",
+    "category": "Graphics",
+    "icon": "fa-solid fa-file-image",
+    "keywords": [
+      "png",
+      "image",
+      "converter",
+      "jpg to png",
+      "webp to png",
+      "graphics",
+      "tool"
+    ]
   }
 ]
