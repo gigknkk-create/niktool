@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Meter to Kilometer Converter",
+    "description": "A high-precision bidirectional unit converter for meters and kilometers with real-time calculations.",
+    "path": "/tools/meter-to-kilometer-converter/",
+    "category": "Converters",
+    "icon": "straighten",
+    "keywords": [
+      "meters to kilometers",
+      "km to m",
+      "m to km",
+      "meter to km converter",
+      "distance converter",
+      "length converter"
+    ]
+  }
+]
