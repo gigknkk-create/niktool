@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to PDF Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .img-card:hover .remove-btn {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">
+                Image to PDF Converter
+            </h1>
+            <p class="text-slate-400 text-lg">Convert JPG, PNG, and WebP images into a single PDF file locally in your browser.</p>
+        </header>
+
+        <div class="glass-panel rounded-2xl p-8">
+            <!-- Upload Area -->
+            <div id="dropzone" class="border-2 border-dashed border-slate-700 rounded-xl p-10 text-center hover:border-indigo-500 transition-colors cursor-pointer mb-8 bg-slate-800/30">
+                <input type="file" id="fileInput" class="hidden" multiple accept="image/*">
+                <i class="fa-solid fa-cloud-arrow-up text-5xl text-indigo-400 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Click or Drag Images Here</h3>
+                <p class="text-slate-400">Supports PNG, JPG, WebP (Max 10MB per file)</p>
+            </div>
+
+            <!-- Preview Area -->
+            <div id="previewContainer" class="hidden mb-8">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl font-semibold">Selected Images (<span id="imageCount">0</span>)</h3>
+                    <button id="clearAll" class="text-sm text-red-400 hover:text-red-300 transition-colors">
+                        <i class="fa-solid fa-trash-can mr-1"></i> Clear All
+                    </button>
+                </div>
+                <div id="imageGrid" class="preview-grid"></div>
+            </div>
+
+            <!-- Configuration -->
+            <div id="controls" class="hidden space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">Page Size</label>
+                        <select id="pageSize" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 outline-none">
+                            <option value="a4">A4 (Standard)</option>
+                            <option value="fit">Original Image Size</option>
+                            <option value="letter">US Letter</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">Orientation</label>
+                        <select id="orientation" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 outline-none">
+                            <option value="p">Portrait</option>
+                            <option value="l">Landscape</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="generateBtn" class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold text-lg shadow-lg shadow-indigo-500/20 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    Generate & Download PDF
+                </button>
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="text-center py-12 text-slate-500">
+                <i class="fa-solid fa-images text-4xl mb-3 opacity-20"></i>
+                <p>No images uploaded yet.</p>
+            </div>
+        </div>
+
+        <footer class="mt-12 text-center text-slate-500 text-sm">
+            <p><i class="fa-solid fa-shield-halved mr-1"></i> Privacy Note: Your images are processed entirely in your browser and never uploaded to any server.</p>
+        </footer>
+    </div>
+    <script src="./tool.js"></script>
+</body>
+</html>
