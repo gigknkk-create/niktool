@@ -1,9 +1,9 @@
 
   {
     "name": "Centimeters to Meters Converter",
-    "description": "Convert cm to m and m to cm with high precision. Fast, bidirectional, and free unit conversion tool.",
+    "description": "Convert centimeters (cm) to meters (m) and vice versa instantly with our bidirectional length converter.",
     "path": "/tools/cm-to-m-converter/",
-    "category": "Units",
+    "category": "Converters",
     "icon": "straighten",
     "keywords": [
       "centimeters to meters",
@@ -13,5 +13,4 @@
       "length converter",
       "unit conversion"
     ]
-    
   }
