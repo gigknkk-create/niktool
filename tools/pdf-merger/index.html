@@ -1,157 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Merge PDF Files Online for Free | NikTool</title>
-  <meta name="description" content="Combine multiple PDF files into one document online for free. Reorder your files and merge them privately without uploading them to a server.">
-  <meta name="keywords" content="pdf merger, merge pdf online, combine pdf files, join pdf files, free pdf tool">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://niktool.in/tools/pdf-merger/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Free PDF Merger Online | NikTool">
-  <meta property="og:description" content="Reorder and combine PDF files privately in your browser.">
-  <meta property="og:url" content="https://niktool.in/tools/pdf-merger/">
-  <meta name="twitter:card" content="summary">
-  <meta name="theme-color" content="#176b4d">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/styles.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        "name": "PDF Merger",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "url": "https://niktool.in/tools/pdf-merger/",
-        "description": "Merge multiple PDF files into one document securely in your browser.",
-        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I merge PDF files?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Choose two or more PDF files, arrange them in the order you want, and select Merge PDFs. The combined document will download when it is ready."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are my PDF files uploaded?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Your files are processed locally in your browser and are not uploaded to NikTool."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I change the order of the PDFs?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Use the Move up and Move down buttons beside each file before merging."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I merge password-protected PDFs?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Password-protected or encrypted PDFs must be unlocked before they can be merged with this tool."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Merger</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <style>
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .file-item:hover .drag-handle {
+            opacity: 1;
+        }
+    </style>
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="/" aria-label="NikTool home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7h14M8 12h8m-5 5h2"/></svg>
-        </span>
-        <span class="brand-text">NikTool</span>
-      </a>
-      <div class="nav-links"><a class="home-link" href="/">Home</a><a href="/#tools">All tools</a></div>
-    </nav>
-  </header>
+<body class="bg-slate-900 text-slate-200 min-h-screen p-4 md:p-8">
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-red-500/20 text-red-400 rounded-2xl mb-4">
+                <i class="fa-solid fa-file-pdf text-3xl"></i>
+            </div>
+            <h1 class="text-3xl font-bold text-white">PDF Merger</h1>
+            <p class="text-slate-400 mt-2">Combine multiple PDFs into one document securely. Files never leave your browser.</p>
+        </div>
 
-  <main id="main" class="container">
-    <section class="tool-hero">
-      <h1>PDF Merger</h1>
-    </section>
+        <div class="glass-card rounded-2xl p-6 shadow-xl">
+            <!-- Drop Zone -->
+            <div id="dropZone" class="border-2 border-dashed border-slate-700 rounded-xl p-10 text-center transition-colors hover:border-red-500/50 cursor-pointer mb-6 group">
+                <input type="file" id="fileInput" multiple accept="application/pdf" class="hidden">
+                <i class="fa-solid fa-cloud-arrow-up text-4xl text-slate-500 group-hover:text-red-400 mb-4"></i>
+                <p class="text-lg font-medium">Drag & drop PDF files here</p>
+                <p class="text-sm text-slate-500 mt-1">or click to browse your files</p>
+            </div>
 
-    <section class="tool-workspace" aria-labelledby="workspace-title">
-      <div class="workspace-header">
-        <h2 id="workspace-title">Choose your PDFs</h2>
-        <span class="workspace-status"><span class="status-dot"></span>Processed locally</span>
-      </div>
+            <!-- File List Container -->
+            <div id="fileListContainer" class="hidden">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-lg font-semibold">Files to Merge</h2>
+                    <span id="fileCount" class="bg-slate-700 px-3 py-1 rounded-full text-xs">0 files</span>
+                </div>
+                
+                <div id="fileList" class="space-y-2 mb-6">
+                    <!-- File items will be injected here -->
+                </div>
 
-      <div class="control-group">
-        <label class="control-label" for="pdf-input">Select two or more PDF files</label>
-        <input id="pdf-input" type="file" accept="application/pdf,.pdf" multiple>
-      </div>
+                <!-- Actions -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button id="mergeBtn" class="flex-1 bg-red-600 hover:bg-red-500 disabled:bg-slate-700 disabled:text-slate-500 text-white font-bold py-3 px-6 rounded-xl transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-layer-group"></i>
+                        Merge & Download
+                    </button>
+                    <button id="clearBtn" class="bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-6 rounded-xl transition-all">
+                        Clear All
+                    </button>
+                </div>
+            </div>
 
-      <div id="file-section" hidden>
-        <p class="editor-label">Merge order</p>
-        <ol id="file-list" aria-label="Selected PDF files"></ol>
-      </div>
+            <!-- Loading State -->
+            <div id="loader" class="hidden mt-4 text-center">
+                <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-red-500 border-t-transparent mb-2"></div>
+                <p class="text-sm text-slate-400">Processing your PDF... This may take a few seconds.</p>
+            </div>
+        </div>
 
-      <div class="toolbar">
-        <button class="button" id="merge-button" type="button" disabled>Merge PDFs</button>
-        <button class="button secondary" id="clear-button" type="button" disabled>Clear all</button>
-      </div>
-      <p class="message" id="pdf-message" role="status" aria-live="polite">Select at least two PDF files to begin.</p>
-    </section>
-
-    <article class="seo-content">
-      <h2>How to merge PDF files online</h2>
-      <ol>
-        <li>Select two or more PDF documents.</li>
-        <li>Use the arrow buttons to put the files in the right order.</li>
-        <li>Select Merge PDFs to create and download one combined file.</li>
-      </ol>
-
-      <h2>Private, browser-based PDF merging</h2>
-      <p>The merge happens locally in your browser. Your documents are not sent to a server, and the finished PDF is downloaded directly to your device.</p>
-
-      <h2>Frequently asked questions</h2>
-      <details>
-        <summary>How do I merge PDF files?</summary>
-        <p>Choose two or more PDF files, arrange them in the order you want, and select Merge PDFs. The combined document will download when it is ready.</p>
-      </details>
-      <details>
-        <summary>Are my PDF files uploaded?</summary>
-        <p>No. Your files are processed locally in your browser and are not uploaded to NikTool.</p>
-      </details>
-      <details>
-        <summary>Can I change the order of the PDFs?</summary>
-        <p>Yes. Use the Move up and Move down buttons beside each file before merging.</p>
-      </details>
-      <details>
-        <summary>Can I merge password-protected PDFs?</summary>
-        <p>Password-protected or encrypted PDFs must be unlocked before they can be merged with this tool.</p>
-      </details>
-    </article>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner container">
-      <p>&copy; <span data-year></span> NikTool.</p>
-      <div class="footer-links"><a href="/">Home</a><a href="/#tools">All tools</a></div>
+        <!-- Privacy Notice -->
+        <div class="mt-8 text-center text-slate-500 text-sm">
+            <i class="fa-solid fa-shield-halved mr-1"></i> 
+            Privacy First: All merging happens locally in your browser. Your files are not uploaded to any server.
+        </div>
     </div>
-  </footer>
 
-  <script src="/assets/shared.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
-  <script src="/tools/pdf-merger/script.js"></script>
+    <script src="./tool.js"></script>
 </body>
 </html>
