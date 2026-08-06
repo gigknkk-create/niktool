@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-4 md:p-8">
+    <div class="max-w-5xl mx-auto">
+        <div class="flex flex-col items-center mb-10">
+            <div class="bg-blue-500/20 p-4 rounded-2xl mb-4">
+                <i class="fa-solid fa-code-compare text-4xl text-blue-400"></i>
+            </div>
+            <h1 class="text-4xl font-bold mb-2 text-white tracking-tight">Alphabet to Code</h1>
+            <p class="text-slate-400">Instant conversion from plain text to various coding schemes.</p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl shadow-xl mb-8">
+            <label class="block text-sm font-medium text-slate-400 mb-2">Input Text</label>
+            <textarea id="userInput" class="w-full bg-slate-800/50 border border-slate-700 rounded-xl p-4 text-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all h-32" placeholder="Type your text here...">Hello World</textarea>
+            <div class="flex justify-end mt-2">
+                <button id="clearBtn" class="text-sm text-slate-400 hover:text-white transition-colors">
+                    <i class="fa-solid fa-trash-can mr-1"></i> Clear
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Binary Card -->
+            <div class="glass-card p-5 rounded-2xl">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="font-semibold text-blue-400"><i class="fa-solid fa-microchip mr-2"></i>Binary</h3>
+                    <button onclick="copyToClipboard('outputBinary')" class="hover:text-blue-400 transition-colors"><i class="fa-solid fa-copy"></i></button>
+                </div>
+                <div id="outputBinary" class="bg-slate-900/50 p-3 rounded-lg font-mono text-sm break-all h-24 overflow-y-auto"></div>
+            </div>
+
+            <!-- Morse Card -->
+            <div class="glass-card p-5 rounded-2xl">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="font-semibold text-yellow-400"><i class="fa-solid fa-ellipsis-h mr-2"></i>Morse Code</h3>
+                    <button onclick="copyToClipboard('outputMorse')" class="hover:text-yellow-400 transition-colors"><i class="fa-solid fa-copy"></i></button>
+                </div>
+                <div id="outputMorse" class="bg-slate-900/50 p-3 rounded-lg font-mono text-sm break-all h-24 overflow-y-auto"></div>
+            </div>
+
+            <!-- NATO Card -->
+            <div class="glass-card p-5 rounded-2xl">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="font-semibold text-emerald-400"><i class="fa-solid fa-plane mr-2"></i>NATO Phonetic</h3>
+                    <button onclick="copyToClipboard('outputNato')" class="hover:text-emerald-400 transition-colors"><i class="fa-solid fa-copy"></i></button>
+                </div>
+                <div id="outputNato" class="bg-slate-900/50 p-3 rounded-lg font-mono text-sm break-all h-24 overflow-y-auto"></div>
+            </div>
+
+            <!-- Hex Card -->
+            <div class="glass-card p-5 rounded-2xl">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="font-semibold text-purple-400"><i class="fa-solid fa-hashtag mr-2"></i>Hexadecimal</h3>
+                    <button onclick="copyToClipboard('outputHex')" class="hover:text-purple-400 transition-colors"><i class="fa-solid fa-copy"></i></button>
+                </div>
+                <div id="outputHex" class="bg-slate-900/50 p-3 rounded-lg font-mono text-sm break-all h-24 overflow-y-auto"></div>
+            </div>
+
+            <!-- Base64 Card -->
+            <div class="glass-card p-5 rounded-2xl">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="font-semibold text-orange-400"><i class="fa-solid fa-lock mr-2"></i>Base64</h3>
+                    <button onclick="copyToClipboard('outputBase64')" class="hover:text-orange-400 transition-colors"><i class="fa-solid fa-copy"></i></button>
+                </div>
+                <div id="outputBase64" class="bg-slate-900/50 p-3 rounded-lg font-mono text-sm break-all h-24 overflow-y-auto"></div>
+            </div>
+
+            <!-- ROT13 Card -->
+            <div class="glass-card p-5 rounded-2xl">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="font-semibold text-pink-400"><i class="fa-solid fa-rotate mr-2"></i>ROT13</h3>
+                    <button onclick="copyToClipboard('outputRot13')" class="hover:text-pink-400 transition-colors"><i class="fa-solid fa-copy"></i></button>
+                </div>
+                <div id="outputRot13" class="bg-slate-900/50 p-3 rounded-lg font-mono text-sm break-all h-24 overflow-y-auto"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./tool.js"></script>
+</body>
+</html>
