@@ -5,7 +5,13 @@
     "path": "/tools/word-counter/",
     "category": "Text",
     "icon": "text",
-    "keywords": ["word", "character", "sentence", "reading time", "text"]
+    "keywords": [
+      "word",
+      "character",
+      "sentence",
+      "reading time",
+      "text"
+    ]
   },
   {
     "name": "JSON Formatter",
@@ -13,7 +19,13 @@
     "path": "/tools/json-formatter/",
     "category": "Developer",
     "icon": "code",
-    "keywords": ["json", "format", "validate", "minify", "developer"]
+    "keywords": [
+      "json",
+      "format",
+      "validate",
+      "minify",
+      "developer"
+    ]
   },
   {
     "name": "Password Generator",
@@ -21,7 +33,40 @@
     "path": "/tools/password-generator/",
     "category": "Security",
     "icon": "shield",
-    "keywords": ["password", "random", "secure", "generator", "security"]
+    "keywords": [
+      "password",
+      "random",
+      "secure",
+      "generator",
+      "security"
+    ]
+  },
+  {
+    "name": "Word & Character Counter",
+    "description": "Detailed text statistics, reading time aur keyword density calculation.",
+    "path": "/tools/word-character-counter/",
+    "category": "Text",
+    "icon": "fa-font",
+    "keywords": [
+      "word-character-counter",
+      "text",
+      "free tool",
+      "online",
+      "niktool"
+    ]
+  },
+  {
+    "name": "Base64 Encoder Decoder",
+    "description": "Text aur URLs ko Base64 format mein encode ya decode karna.",
+    "path": "/tools/base64-encoder-decoder/",
+    "category": "Developer",
+    "icon": "fa-code",
+    "keywords": [
+      "base64-encoder-decoder",
+      "developer",
+      "free tool",
+      "online",
+      "niktool"
+    ]
   }
 ]
-
