@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to PDF Maker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <style>
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .sortable-ghost {
+            opacity: 0.4;
+            border: 2px dashed #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+        <header class="text-center mb-12">
+            <div class="inline-block p-4 bg-blue-600/20 rounded-2xl mb-4">
+                <i class="fa-solid fa-file-pdf text-4xl text-blue-500"></i>
+            </div>
+            <h1 class="text-4xl font-bold mb-2">Image to PDF Maker</h1>
+            <p class="text-slate-400">Convert your images into a single PDF. Drag to reorder, then download.</p>
+        </header>
+
+        <div class="glass-card rounded-2xl p-6 mb-8">
+            <div id="dropzone" class="border-2 border-dashed border-slate-700 rounded-xl p-10 text-center cursor-pointer hover:border-blue-500 hover:bg-slate-800/50 transition-all">
+                <input type="file" id="file-input" class="hidden" accept="image/*" multiple>
+                <i class="fa-solid fa-cloud-arrow-up text-5xl text-slate-500 mb-4"></i>
+                <p class="text-lg font-medium">Click or drag & drop images here</p>
+                <p class="text-sm text-slate-500 mt-2">Supports PNG, JPG, JPEG, WEBP</p>
+            </div>
+        </div>
+
+        <div id="preview-container" class="hidden">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-semibold">Image Queue (<span id="image-count">0</span>)</h2>
+                <button id="clear-btn" class="text-red-400 hover:text-red-300 text-sm font-medium">
+                    <i class="fa-solid fa-trash-can mr-1"></i> Clear All
+                </button>
+            </div>
+            
+            <div id="sortable-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-8"></div>
+
+            <div class="glass-card rounded-2xl p-6">
+                <h3 class="text-lg font-semibold mb-4">Document Settings</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div>
+                        <label class="block text-xs font-medium uppercase tracking-wider text-slate-500 mb-2">Page Size</label>
+                        <select id="page-size" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+                            <option value="a4">A4 (Standard)</option>
+                            <option value="letter">Letter</option>
+                            <option value="fit">Fit Image Size</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium uppercase tracking-wider text-slate-500 mb-2">Orientation</label>
+                        <select id="orientation" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+                            <option value="p">Portrait</option>
+                            <option value="l">Landscape</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium uppercase tracking-wider text-slate-500 mb-2">Margin (mm)</label>
+                        <input type="number" id="margin" value="10" min="0" max="50" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                </div>
+
+                <button id="generate-btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-3 shadow-lg shadow-blue-900/20">
+                    <i class="fa-solid fa-file-export"></i>
+                    Generate & Download PDF
+                </button>
+            </div>
+        </div>
+
+        <footer class="mt-12 text-center text-slate-500 text-sm">
+            <p>Your images are processed locally in your browser and are never uploaded to any server.</p>
+        </footer>
+    </div>
+
+    <script src="./tool.js"></script>
+</body>
+</html>

@@ -1,118 +1,16 @@
-﻿[
-    {
-        "name":  "Word Counter",
-        "description":  "Count words, characters, sentences, and reading time as you type.",
-        "path":  "/tools/word-counter/",
-        "category":  "Text",
-        "icon":  "text",
-        "keywords":  [
-                         "word",
-                         "character",
-                         "sentence",
-                         "reading time",
-                         "text"
-                     ]
-    },
-    {
-        "name":  "JSON Formatter",
-        "description":  "Format, validate, minify, and copy JSON without uploading your data.",
-        "path":  "/tools/json-formatter/",
-        "category":  "Developer",
-        "icon":  "code",
-        "keywords":  [
-                         "json",
-                         "format",
-                         "validate",
-                         "minify",
-                         "developer"
-                     ]
-    },
-    {
-        "name":  "Password Generator",
-        "description":  "Create strong, customizable passwords locally in your browser.",
-        "path":  "/tools/password-generator/",
-        "category":  "Security",
-        "icon":  "shield",
-        "keywords":  [
-                         "password",
-                         "random",
-                         "secure",
-                         "generator",
-                         "security"
-                     ]
-    },
-    {
-        "name":  "PDF Merger",
-        "description":  "Merge multiple PDF files into one document securely in your browser.",
-        "path":  "/tools/pdf-merger/",
-        "category":  "PDF",
-        "icon":  "text",
-        "keywords":  [
-                         "pdf",
-                         "merge",
-                         "combine",
-                         "join",
-                         "document"
-                     ]
-    },
-    {
-        "name":  "Case Converter",
-        "description":  "Convert text to uppercase, lowercase, title case, camelCase, and more.",
-        "path":  "/tools/case-converter/",
-        "category":  "Text",
-        "icon":  "text",
-        "keywords":  [
-                         "case",
-                         "uppercase",
-                         "lowercase",
-                         "title case",
-                         "camelcase",
-                         "snake case",
-                         "kebab case",
-                         "text"
-                     ]
-    },
-    {
-        "name":  "Remove Last Two PDF Pages",
-        "description":  "Delete the trailing 2 pages from any PDF document locally in your browser.",
-        "path":  "/tools/remove-last-two-pdf-pages/",
-        "category":  "PDF",
-        "icon":  "text",
-        "keywords":  [
-                         "pdf",
-                         "remove pages",
-                         "delete pdf pages",
-                         "trim pdf",
-                         "last two pages"
-                     ]
-    },
-    {
-        "name":  "Remove First Page of PDF",
-        "description":  "Delete the title or cover page from any PDF document locally in your browser.",
-        "path":  "/tools/remove-first-page-of-pdf/",
-        "category":  "PDF",
-        "icon":  "text",
-        "keywords":  [
-                         "pdf",
-                         "remove first page",
-                         "delete cover page",
-                         "trim pdf",
-                         "delete page 1"
-                     ]
-    },
-    {
-        "name":  "Custom PDF Page Remover",
-        "description":  "Delete specific pages, custom ranges, or leading/trailing pages from any PDF document locally.",
-        "path":  "/tools/remove-pages-from-pdf/",
-        "category":  "PDF",
-        "icon":  "text",
-        "keywords":  [
-                         "pdf",
-                         "remove pages",
-                         "delete custom pdf pages",
-                         "delete page range",
-                         "remove page range",
-                         "delete pages"
-                     ]
-    }
+[
+  {
+    "name": "Image to PDF Maker",
+    "description": "Convert sets of images into a single professional PDF document with custom margins and page sizes.",
+    "path": "/tools/image-to-pdf-maker/",
+    "category": "Media",
+    "icon": "fa-solid fa-file-pdf",
+    "keywords": [
+      "image to pdf",
+      "jpg to pdf",
+      "png to pdf",
+      "convert images",
+      "pdf creator"
+    ]
+  }
 ]
